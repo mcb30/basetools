@@ -1308,9 +1308,12 @@ class ModuleAutoGen(AutoGen):
                     MakeType = gMakeTypeMap[Type]
                 else:
                     MakeType = 'nmake'
-                File = os.path.join(self.SourceOverrideDir, self.Module.CustomMakefile[Type])
-                if not os.path.exists(File):
+                if self.SourceOverrideDir == None:
                     File = os.path.join(self.SourceDir, self.Module.CustomMakefile[Type])
+                else:
+                    File = os.path.join(self.SourceOverrideDir, self.Module.CustomMakefile[Type])
+                    if not os.path.exists(File):
+                        File = os.path.join(self.SourceDir, self.Module.CustomMakefile[Type])
                 self._CustomMakefile[MakeType] = File
         return self._CustomMakefile
 
