@@ -323,6 +323,12 @@ RELEASE_VS2005TEAMSUITE_IPF_DLINK_FLAGS  = /NOLOGO /NODEFAULTLIB /LTCG /DLL /OPT
 ##################
 *_WINDDK3790x1830_*_ASL_PATH        = DEF(ASL_BIN)\iasl.exe
 
+*_WINDDK3790x1830_*_ASM16_PATH            = DEF(WINDDK_BIN32)\ml.exe
+*_WINDDK3790x1830_*_ASMLINK16_PATH        = DEF(WINDDK_BIN16)\link.exe
+*_WINDDK3790x1830_*_ASMLINK16_FLAGS       = /nologo /tiny
+  DEBUG_WINDDK3790x1830_*_ASM16_FLAGS     = /nologo /c /WX /W3 /coff /Cx /Zd /Zi
+RELEASE_WINDDK3790x1830_*_ASM16_FLAGS     = /nologo /c /WX /W3 /coff /Cx /Zd
+
 ##################
 # IA32 definitions
 ##################
